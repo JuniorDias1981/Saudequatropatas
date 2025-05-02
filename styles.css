@@ -1,0 +1,554 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Consistente com o body */
+}
+
+body {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+h3 {
+    font-style: italic;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link-container {
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    margin: 20px auto; /* Centraliza a div no meio da página */
+    padding: 20px; /* Adiciona espaço interno para melhor visualização */
+    max-width: 600px; /* Define uma largura máxima para a caixa */
+    background-color: #ffffff; /* Fundo branco para destacar o conteúdo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave */
+    border-radius: 10px; /* Bordas arredondadas para um design moderno */
+    transition: transform 0.3s ease-in-out; /* Efeito de hover suave */
+}
+
+.link-container:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada no hover */
+}
+.link-artigo {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    padding: 12px 25px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+.link-artigo:hover {
+    background-color: #ffeb3b;
+    color: black;
+    transform: scale(1.05);
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #007BFF;
+    margin: 15px 0;
+}
+
+/* Classes Específicas */
+.logo-efeito {
+    width: 50px; /* Adicionada unidade px */
+    height: auto; /* Corrigido para 'auto' */
+    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.7));
+}
+
+.logo-efeito:hover {
+    filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.9));
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.home-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: larger;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.radio-label {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.radio-label input {
+    display: none;
+}
+
+.radio-label.selected {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #2E7D32;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 20px auto;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#resultadoIdade,
+#resultadoGestacao {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-left: 5px solid #4CAF50;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    display: none; /* Inicialmente escondido */
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-link i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.contact-link:hover {
+    background-color: #388E3C;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.caixa {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 30px auto;
+    line-height: 1.8;
+    transition: transform 0.3s;
+}
+
+.caixa:hover {
+    transform: translateY(-5px);
+}
+
+.destaque {
+    background-color: #f9f9f9;
+    border-left: 5px solid #007BFF;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.link-artigo {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    padding: 12px 25px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.link-artigo:hover {
+    background-color: #ffeb3b;
+    color: black;
+    transform: scale(1.05);
+}
+
+.doenca {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.titulo-doenca {
+    color: #FF5733;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.fase {
+    margin-bottom: 20px;
+}
+
+.fase h4 {
+    font-size: 18px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.fase ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.fase ul li {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.fase ul li::before {
+    content: "•";
+    color: #4CAF50;
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+    top: 0;
+}
+
+strong {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.calendario-titulo {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.calendario {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.calendario strong {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.faq-resposta {
+    text-align: justify;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.calculadora {
+    width: 300px;
+    margin: 50px auto;
+    background-color: #fdfcfc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.tela {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 30px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+#calcular {
+    background-color: #3e8e41;
+}
+
+#calcular:hover {
+    background-color: #52e057;
+}
+
+#apoiadores {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#apoiadores h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.apoiador-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.apoiador {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.apoiador:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.apoiador img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.apoiador:hover img {
+    transform: scale(1.05);
+}
+
+.apoiador p {
+    font-size: 18px;
+    color: #555;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.apoiador a {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+}
+
+.apoiador a:hover {
+    background-color: #388E3C;
+}
+
+.titulo-destaque {
+    text-align: center;
+    background-color: #047436;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.container2 {
+    max-width: 800px; /* Largura máxima para a caixa */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #ffffff; /* Fundo branco para destaque */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: transform 0.3s ease-in-out; /* Efeito hover suave */
+}
+
+.container2:hover {
+    transform: translateY(-5px); /* Eleva ligeiramente ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada no hover */
+}
+
+.section1 {
+    margin-bottom: 20px; /* Espaçamento entre as seções */
+    padding: 15px; /* Espaçamento interno */
+    background-color: #f9f9f9; /* Fundo claro para diferenciar as seções */
+    border-left: 5px solid #007BFF; /* Barra lateral azul para destaque */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve para cada seção */
+}
+
+.section1 h2 {
+    color: #007BFF; /* Cor azul para o título */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+}
+
+.section1 p {
+    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+    margin-bottom: 10px; /* Espaçamento entre parágrafos */
+}
+
+p {
+    font-size: 16px; /* Tamanho padrão do texto */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    margin-bottom: 15px; /* Espaçamento abaixo do parágrafo */
+}
+.destaque-final {
+    display: flex; /* Alinha o ícone e o texto horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    background-color: #af2007; /* Fundo amarelo claro */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    border: 1px solid #fffffe; /* Borda amarela */
+    margin: 20px 0; /* Espaçamento externo */
+}
+
+.destaque-final p {
+    font-size: 18px; /* Tamanho maior para o texto */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    color: #fdfbfa; /* Cor do texto mais escura */
+    margin: 0; /* Remove margem padrão do parágrafo */
+}
+
+.destaque-final strong {
+    color: #f7f3f2; /* Destaca a parte importante */
+    font-weight: bold;
+}
+

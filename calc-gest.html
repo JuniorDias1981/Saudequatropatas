@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Saúde quatro patas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=1">
+    
+</head>
+<body>
+    <header>
+        <img src="img/logo1.png" alt="Logo" class="logo-efeito">
+        <h1>Saúde quatro patas</h1>
+        <a href="index.html" class="home-button">INICIO</a>
+    </header>
+
+    <div class="container">
+               <!-- Calculadora de Gestação -->
+        <div class="card">
+            <h2>Calculadora de Gestação de Cadelas e Gatas</h2>
+            <input type="date" id="dataCruzamento">
+            <button onclick="calcularGestacao()">Calcular Data de Nascimento</button>
+            <p id="resultadoGestacao"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contato:</p>
+        <p>
+            <a href="mailto:jrdias32@gmail.com" class="contact-link" target="_blank">
+                <i class="fas fa-envelope"></i> Junior Dias
+            </a> | 
+            <a href="https://wa.me/5522997407901" class="contact-link" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a> | 
+            <a href="https://jrmanutencao.netlify.app/" class="contact-link" target="_blank">
+                <i class="fas fa-globe"></i> JR Manutenção
+            </a>
+        </p>
+        <p>&copy; 2025 Saúde quatro patas</p>
+    </footer>
+
+    <script>
+    function calcularGestacao() {
+    const dataCruzamento = new Date(document.getElementById('dataCruzamento').value);
+    if (isNaN(dataCruzamento)) {
+        document.getElementById('resultadoGestacao').innerText = 'Por favor, selecione uma data válida!';
+        document.getElementById('resultadoGestacao').style.display = 'block'; // Mostrar erro
+        return;
+    }
+    const diasGestacao = 63;
+    dataCruzamento.setDate(dataCruzamento.getDate() + diasGestacao);
+    document.getElementById('resultadoGestacao').innerText = `Data prevista para o nascimento: ${dataCruzamento.toLocaleDateString('pt-BR')}`;
+    
+    // Exibir o resultado
+    document.getElementById('resultadoGestacao').style.display = 'block';
+}
+
+    </script>
+
+</body>
+</html>
