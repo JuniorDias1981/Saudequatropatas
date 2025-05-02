@@ -1,17 +1,25 @@
-ocument.getElementById('calcular').addEventListener('click', function () {
-  const dataInicial = document.getElementById('data-inicial').value;
-  const quantidadeDias = parseInt(document.getElementById('dias').value);
+document.getElementById("calcular").addEventListener("click", function() {
+  const dataInicial = document.getElementById("data-inicial").value;
+  const dias = parseInt(document.getElementById("dias").value);
 
-  if (!dataInicial || isNaN(quantidadeDias) || quantidadeDias <= 0) {
-      alert('Por favor, insira uma data válida e uma quantidade de dias maior que zero.');
+  if (!dataInicial || isNaN(dias) || dias <= 0) {
+      alert("Por favor, preencha todos os campos corretamente.");
       return;
   }
 
-  const data = new Date(dataInicial);
-  data.setDate(data.getDate() + quantidadeDias);
+  // Corrigindo a criação da data para evitar fuso horário
+  const partes = dataInicial.split("-");
+  const data = new Date(partes[0], partes[1] - 1, partes[2]); // ano, mês (0-indexado), dia
 
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  const resultado = data.toLocaleDateString('pt-BR', options);
+  data.setDate(data.getDate() + dias);
 
-  document.getElementById('resultado').querySelector('input').value = resultado;
+  const dia = String(data.getDate()).padStart(2, '0');
+  const mes = String(data.getMonth() + 1).padStart(2, '0');
+  const ano = data.getFullYear();
+
+  document.getElementById("data-final").value = `${dia}/${mes}/${ano}`;
 });
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
